@@ -4,6 +4,7 @@ package edu.escuelaing.arep;
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -24,7 +25,7 @@ public class URLReader {
     public  void readAndSaveURLPage(URL url) {
         try(BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()))){
             String inputLine = null;
-            File resultsfile = new File("C:\\Users\\nicolas.cardenas-c\\Downloads\\AREP_LAB_3\\src\\main\\java\\edu\\escuelaing\\arep\\resources\\results.html");
+            File resultsfile = new File("src\\main\\java\\edu\\escuelaing\\arep\\resources\\results.html");
             FileWriter fw = new FileWriter(resultsfile);
             while((inputLine = reader.readLine()) != null){
                 System.out.println(inputLine);
@@ -33,13 +34,18 @@ public class URLReader {
             fw.close();
         } catch (IOException e){
             Logger.getLogger(URLReader.class.getName()).log(Level.SEVERE, null, e);
+            System.err.println(e);
+
         }
     }
 
 
     public static void main(String[] args) throws MalformedURLException {
         URLReader reader = new URLReader();
-        URL url = new URL("https://www.google.es/");
+        System.out.println("Enter URL, for example: https://www.google.es/ ");
+        Scanner scanner = new Scanner(System.in);
+        String strurl = scanner.nextLine();
+        URL url = new URL(strurl);
         reader.read(url);
         System.out.println("//////////////");
         reader.readAndSaveURLPage(url);

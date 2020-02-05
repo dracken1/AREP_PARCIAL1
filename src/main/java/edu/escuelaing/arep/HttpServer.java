@@ -30,17 +30,20 @@ public class HttpServer {
             System.out.println("Recibí: " + inputLine);
             if (!in.ready()) {break; }
         }
-        outputLine =
-                "<!DOCTYPE html>" +
-                        "<html>" +
-                        "<head>" +
-                        "<meta charset=\"UTF-8\">" +
-                        "<title>Title of the document</title>\n" +
-                        "</head>" +
-                        "<body>" +
-                        "<h1>Mi propio mensaje</h1>" +
-                        "</body>" +
-                        "</html>" + inputLine;
+        outputLine = "HTTP/1.1 200 OK\r\n"
+                + "Content-Type: text/html\r\n"
+                + "\r\n"
+                + "<!DOCTYPE html>\n"
+                + "<html>\n"
+                + "<head>\n"
+                + "<meta charset=\"UTF-8\">\n"
+                + "<title>Title of the document</title>\n"
+                + "</head>\n"
+                + "<body>\n"
+                + "<h1>Mi propio mensaje</h1>\n"
+                + "</body>\n"
+                + "</html>\n" + inputLine;
+        System.out.println(outputLine);
         out.println(outputLine);
         out.close();
         in.close();
