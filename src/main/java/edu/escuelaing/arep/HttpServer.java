@@ -9,7 +9,7 @@ public class HttpServer {
         try {
             serverSocket = new ServerSocket(36000);
         } catch (IOException e) {
-            System.err.println("Could not listen on port: 35000.");
+            System.err.println("Could not listen on port: 36000.");
             System.exit(1);
         }
 
@@ -37,12 +37,16 @@ public class HttpServer {
                 + "<html>\n"
                 + "<head>\n"
                 + "<meta charset=\"UTF-8\">\n"
-                + "<title>Title of the document</title>\n"
+                + "<title>browser</title>\n"
                 + "</head>\n"
                 + "<body>\n"
-                + "<h1>Mi propio mensaje</h1>\n"
+                + "<h1>Browser</h1>\n"
+                + "<div>"
+                + "<input />"
+                + "</div>"
                 + "</body>\n"
                 + "</html>\n" + inputLine;
+        System.out.println("input: "+ inputLine);
         System.out.println(outputLine);
         out.println(outputLine);
         out.close();

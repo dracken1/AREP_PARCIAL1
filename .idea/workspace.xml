@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b27b8a33-55c5-488a-9db5-4c5fe16ada3f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AREP_LAB_3.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/escuelaing/arep/HttpServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/escuelaing/arep/HttpServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/escuelaing/arep/URLReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/escuelaing/arep/URLReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/escuelaing/arep/resources/results.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/escuelaing/arep/resources/results.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +50,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.EchoClient">
+  <component name="RunManager" selected="Application.FileTransferServer">
     <configuration name="EchoClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.escuelaing.arep.EchoClient" />
       <module name="AREP_LAB_3" />
@@ -70,6 +66,19 @@
     </configuration>
     <configuration name="EchoServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.escuelaing.arep.EchoServer" />
+      <module name="AREP_LAB_3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.escuelaing.arep.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileTransferServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.escuelaing.arep.FileTransferServer" />
       <module name="AREP_LAB_3" />
       <extension name="coverage">
         <pattern>
@@ -109,10 +118,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FileTransferServer" />
+        <item itemvalue="Application.HttpServer" />
         <item itemvalue="Application.EchoClient" />
         <item itemvalue="Application.EchoServer" />
         <item itemvalue="Application.URLReader" />
-        <item itemvalue="Application.HttpServer" />
       </list>
     </recent_temporary>
   </component>
@@ -127,6 +137,7 @@
       <option name="presentableId" value="Default" />
       <updated>1580489710079</updated>
       <workItem from="1580839729547" duration="11624000" />
+      <workItem from="1581010595345" duration="9477000" />
     </task>
     <servers />
   </component>
@@ -138,26 +149,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>
