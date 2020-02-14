@@ -7,6 +7,8 @@ import java.util.Scanner;
 
 public class EchoClient {
 
+    //heroku url: https://obscure-plains-93870.herokuapp.com/
+
     public static void main(String[] args) throws IOException {
 
         Socket echoSocket = null;
