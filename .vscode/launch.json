@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - EchoClient",
+            "request": "launch",
+            "mainClass": "edu.escuelaing.arep.EchoClient",
+            "projectName": "AREP_LAB_3"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - EchoServer",
+            "request": "launch",
+            "mainClass": "edu.escuelaing.arep.EchoServer",
+            "projectName": "AREP_LAB_3"
+        }
+    ]
+}

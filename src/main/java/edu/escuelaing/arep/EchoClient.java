@@ -2,8 +2,11 @@ package edu.escuelaing.arep;
 
 import java.io.*;
 import java.net.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class EchoClient {
+
     public static void main(String[] args) throws IOException {
 
         Socket echoSocket = null;
@@ -12,35 +15,59 @@ public class EchoClient {
 
         try {
             echoSocket = new Socket("127.0.0.1", 35000);
-            out = new PrintWriter(echoSocket.getOutputStream(), true);
-            in = new BufferedReader(new InputStreamReader(
-                    echoSocket.getInputStream()));
-            } catch (UnknownHostException e) {
-            System.err.println("Don’t know about host!.");
-            System.exit(1);
-        } catch (IOException e) {
-            System.err.println("Couldn’t get I/O for "
-                    + "the connection to: localhost.");
-            System.exit(1);
+            while (true) {
+                
+                try {
+                    out = new PrintWriter(echoSocket.getOutputStream(), true);
+                    in = new BufferedReader(new InputStreamReader(echoSocket.getInputStream()));
+                    out.flush();
+                    System.out.println("Ready to send ...");
+                    String listtosend = EchoClient.createListToSend(out);
+                    out.println(listtosend);
+                    System.out.println("response: " + in.readLine());
+                } catch (UnknownHostException e) {
+                    System.err.println("Don’t know about host!.");
+                    System.exit(1);
+                } catch (IOException e) {
+                    System.err.println("Couldn’t get I/O for " + "the connection to: localhost.");
+                    System.out.println(e);
+                    System.exit(1);
+                }
+            }
+        } finally {
+            if (echoSocket != null) {
+                System.out.println("echosocket closed");
+                echoSocket.close();
+            }            
+            if (in != null) {
+                System.out.println("in closed");
+                in.close();
+            }  
+            if (out != null) {
+                System.out.println("out closed");
+                out.close();
+            }   
         }
 
-        BufferedReader stdIn = new BufferedReader(
-                new InputStreamReader(System.in));
+    }
 
-        /*String userInput;
-
-        while ((userInput = stdIn.readLine()) != null) {
-            out.println(userInput);
-            System.out.println("echo: " + in.readLine());
-            }*/
-
-        for(int i = 0; i<20;i++){
-            out.println(i);
-            System.out.println("echo: " + in.readLine());
+    public static String createListToSend(PrintWriter out) {
+        String listtosend = "";
+        Scanner myScan = new Scanner(System.in);
+        System.out.println("Enter the list size");
+        int listsize = myScan.nextInt();
+        out.println(listsize);
+        System.out.println("Enter the list content numbers");
+        for (int i = 1; i <= listsize; i++) {
+            System.out.println("Enter the " + i + " number");
+            if (i == 1) {
+                listtosend += myScan.nextInt();
+            } else {
+                listtosend += " ";
+                listtosend += myScan.nextInt();
+            }
         }
-        out.close();
-        in.close();
-        stdIn.close();
-        echoSocket.close();
-        }
+        System.out.println("list sended: " + listtosend);
+        return listtosend;
+    }
 }
